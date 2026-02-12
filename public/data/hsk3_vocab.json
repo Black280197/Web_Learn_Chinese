@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "hanzi": "爱好",
+    "pinyin": "àihào",
+    "vietnamese": "Sở thích",
+    "type": "danh từ",
+    "example": "我的爱好",
+    "examplePinyin": "wǒ de àihào",
+    "exampleVietnamese": "Sở thích của tôi"
+  },
+  {
+    "id": 2,
+    "hanzi": "安静",
+    "pinyin": "ānjìng",
+    "vietnamese": "Yên tĩnh",
+    "type": "tính từ",
+    "example": "很安静",
+    "examplePinyin": "hěn ānjìng",
+    "exampleVietnamese": "Rất yên tĩnh"
+  },
+  {
+    "id": 3,
+    "hanzi": "把",
+    "pinyin": "bǎ",
+    "vietnamese": "Đem, lấy (giới từ)",
+    "type": "giới từ",
+    "example": "把书给我",
+    "examplePinyin": "bǎ shū gěi wǒ",
+    "exampleVietnamese": "Đưa sách cho tôi"
+  },
+  {
+    "id": 4,
+    "hanzi": "搬",
+    "pinyin": "bān",
+    "vietnamese": "Chuyển, dời",
+    "type": "động từ",
+    "example": "搬家",
+    "examplePinyin": "bān jiā",
+    "exampleVietnamese": "Chuyển nhà"
+  },
+  {
+    "id": 5,
+    "hanzi": "办法",
+    "pinyin": "bànfǎ",
+    "vietnamese": "Phương pháp, cách",
+    "type": "danh từ",
+    "example": "想办法",
+    "examplePinyin": "xiǎng bànfǎ",
+    "exampleVietnamese": "Nghĩ cách"
+  },
+  {
+    "id": 6,
+    "hanzi": "半",
+    "pinyin": "bàn",
+    "vietnamese": "Nửa",
+    "type": "số từ",
+    "example": "半个小时",
+    "examplePinyin": "bàn ge xiǎoshí",
+    "exampleVietnamese": "Nửa tiếng"
+  },
+  {
+    "id": 7,
+    "hanzi": "办公室",
+    "pinyin": "bàngōngshì",
+    "vietnamese": "Văn phòng",
+    "type": "danh từ",
+    "example": "在办公室",
+    "examplePinyin": "zài bàngōngshì",
+    "exampleVietnamese": "Ở văn phòng"
+  },
+  {
+    "id": 8,
+    "hanzi": "包括",
+    "pinyin": "bāokuò",
+    "vietnamese": "Bao gồm",
+    "type": "động từ",
+    "example": "包括我",
+    "examplePinyin": "bāokuò wǒ",
+    "exampleVietnamese": "Bao gồm tôi"
+  },
+  {
+    "id": 9,
+    "hanzi": "保证",
+    "pinyin": "bǎozhèng",
+    "vietnamese": "Bảo đảm",
+    "type": "động từ",
+    "example": "我保证",
+    "examplePinyin": "wǒ bǎozhèng",
+    "exampleVietnamese": "Tôi bảo đảm"
+  },
+  {
+    "id": 10,
+    "hanzi": "报名",
+    "pinyin": "bàomíng",
+    "vietnamese": "Đăng ký",
+    "type": "động từ",
+    "example": "报名参加",
+    "examplePinyin": "bàomíng cānjiā",
+    "exampleVietnamese": "Đăng ký tham gia"
+  }
+]

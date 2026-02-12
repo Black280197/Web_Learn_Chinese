@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lộ Trình Học - Tự Học Tiếng Trung Free</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons text-primary text-3xl">school</span>
+                    <span class="font-bold text-xl text-gray-900 dark:text-white">Tự Học Tiếng Trung</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Trang Chủ</a>
+                    <a href="curriculum.html" class="text-primary font-medium">Lộ Trình</a>
+                    <a href="index.html#resources" class="text-gray-600 dark:text-gray-300 hover:text-primary">Tài Nguyên</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-primary/10 to-blue-50 dark:from-primary/20 dark:to-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Lộ Trình Học Tiếng Trung Từ 0 đến HSK 4
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Hướng dẫn chi tiết từng bước để đạt được trình độ HSK 4 trong 12-18 tháng
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Phase 1: Foundation -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Giai Đoạn 1: Nền Tảng (Tháng 1-2)</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Học Pinyin, bộ thủ và 150 từ vựng HSK 1</p>
+                </div>
+            </div>
+
+            <div class="pl-16 space-y-6">
+                <!-- Week 1-2: Pinyin -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-primary text-3xl">volume_up</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tuần 1-2: Học Pinyin</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Nền tảng phát âm - điều quan trọng nhất khi bắt đầu học tiếng Trung
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>21 thanh mẫu (Initials): b, p, m, f, d, t, n, l...</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>38 vận mẫu (Finals): a, o, e, i, u, ü, ai, ei...</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>4 dấu thanh + dấu nhẹ (tones)</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="Pinyin.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học Pinyin
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    30 phút/ngày, 2 tuần
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2-4: Radicals -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-green-500 text-3xl">grid_on</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tuần 2-4: Bộ Thủ & Chữ Hán</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Học cách viết và nhận diện bộ thủ - chìa khóa để học chữ Hán
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>214 bộ thủ cơ bản (Kangxi radicals)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Thứ tự nét viết (stroke order)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>50-100 chữ Hán thông dụng nhất</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="BoThuChuHan.html" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học Bộ Thủ
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    45 phút/ngày, 3 tuần
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3-8: HSK 1 Vocab -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-blue-500 text-3xl">style</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tuần 3-8: Từ Vựng HSK 1</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                150 từ vựng cơ bản nhất - số đếm, gia đình, thời gian, chào hỏi
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Số đếm: 一, 二, 三... (yī, èr, sān...)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Gia đình: 爸爸, 妈妈, 我, 你 (bàba, māma, wǒ, nǐ)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Chào hỏi: 你好, 谢谢, 再见 (nǐ hǎo, xièxie, zàijiàn)</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="hsk1.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học HSK 1
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    10-15 từ/ngày, 6 tuần
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2: Building -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Giai Đoạn 2: Xây Dựng (Tháng 3-6)</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Mở rộng từ vựng với HSK 2 và thực hành giao tiếp cơ bản</p>
+                </div>
+            </div>
+
+            <div class="pl-16 space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-blue-500 text-3xl">library_books</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tháng 3-6: HSK 2 - 300 Từ Mới</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Giao tiếp hàng ngày - đi chợ, nhà hàng, giao thông
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Lượng từ: 个, 块, 本, 杯 (gè, kuài, běn, bēi)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Thì quá khứ: 了 (le), 过 (guò)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Câu hỏi: 什么, 哪儿, 怎么 (shénme, nǎr, zěnme)</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="hsk2.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học HSK 2
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    8-10 từ/ngày, 4 tháng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-purple-500 text-3xl">headphones</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Luyện Nghe & Nói</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Thực hành nghe và phát âm hàng ngày
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Nghe podcast tiếng Trung cơ bản 15-20 phút/ngày</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Đọc to từ vựng và câu mẫu</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3: Intermediate -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Giai Đoạn 3: Trung Cấp (Tháng 7-12)</h2>
+                    <p class="text-gray-600 dark:text-gray-400">HSK 3 - Diễn đạt phức tạp và đọc hiểu văn bản ngắn</p>
+                </div>
+            </div>
+
+            <div class="pl-16 space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-orange-500 text-3xl">auto_stories</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tháng 7-12: HSK 3 - 600 Từ Mới</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Mô tả sự việc, diễn tả cảm xúc, thảo luận chủ đề đơn giản
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Câu phức hợp, câu điều kiện</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Đọc văn bản ngắn (100-200 từ)</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Viết đoạn văn đơn giản</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="hsk3.html" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học HSK 3
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    10-12 từ/ngày, 6 tháng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 4: Advanced -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Giai Đoạn 4: Nâng Cao (Tháng 13-18)</h2>
+                    <p class="text-gray-600 dark:text-gray-400">HSK 4 - Thành thạo giao tiếp và hiểu văn bản phức tạp</p>
+                </div>
+            </div>
+
+            <div class="pl-16 space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-purple-500 text-3xl">emoji_events</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Tháng 13-18: HSK 4 - 600 Từ Mới</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Giao tiếp thành thạo về nhiều chủ đề, đọc báo, xem phim có phụ đề
+                            </p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Thành ngữ và cách diễn đạt thông dụng</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Đọc báo, bài viết ngắn</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="material-icons text-green-500 text-sm">check_circle</span>
+                                    <span>Viết email, thư ngắn bằng tiếng Trung</span>
+                                </li>
+                            </ul>
+                            <div class="flex gap-3">
+                                <a href="hsk4.html" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                                    Học HSK 4
+                                </a>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm flex items-center">
+                                    <span class="material-icons text-sm mr-1">schedule</span>
+                                    10-12 từ/ngày, 6 tháng
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-16 bg-gradient-to-br from-primary/10 to-blue-50 dark:from-primary/20 dark:to-gray-900">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                Lời Khuyên Để Học Hiệu Quả
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-primary text-3xl">lightbulb</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Kiên Trì Hàng Ngày</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                30 phút mỗi ngày tốt hơn 3 giờ mỗi tuần. Não bộ cần thời gian để ghi nhớ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-green-500 text-3xl">repeat</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Ôn Tập Định Kỳ</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Sử dụng phương pháp Spaced Repetition (SRS) với flashcards để ghi nhớ lâu dài.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-blue-500 text-3xl">hearing</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Luyện Nghe Nhiều</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Nghe podcast, nhạc, xem phim tiếng Trung mỗi ngày để làm quen với giọng tự nhiên.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-icons text-orange-500 text-3xl">edit</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Viết Chữ Hán</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Luyện viết tay giúp ghi nhớ tốt hơn. Viết mỗi chữ 10-20 lần khi mới học.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Bắt Đầu Hành Trình Của Bạn Ngay Hôm Nay!
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                千里之行，始于足下 (Qiānlǐ zhī xíng, shǐ yú zúxià)<br>
+                Đường đi ngàn dặm bắt đầu từ bước chân đầu tiên
+            </p>
+            <a href="Pinyin.html" 
+               class="inline-block bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all">
+                Bắt Đầu Với Pinyin
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-gray-600 dark:text-gray-400 text-sm">
+                <p class="mb-2">© 2026 Tự Học Tiếng Trung Free by BlackNDC</p>
+                <p>Tài liệu học tập miễn phí - Chia sẻ kiến thức, lan tỏa yêu thương</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
