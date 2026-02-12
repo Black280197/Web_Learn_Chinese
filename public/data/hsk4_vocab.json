@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "hanzi": "爱护",
+    "pinyin": "àihù",
+    "vietnamese": "Yêu quý, chăm sóc",
+    "type": "động từ",
+    "example": "爱护环境",
+    "examplePinyin": "àihù huánjìng",
+    "exampleVietnamese": "Bảo vệ môi trường"
+  },
+  {
+    "id": 2,
+    "hanzi": "爱惜",
+    "pinyin": "àixī",
+    "vietnamese": "Trân trọng, tiếc",
+    "type": "động từ",
+    "example": "爱惜时间",
+    "examplePinyin": "àixī shíjiān",
+    "exampleVietnamese": "Trân trọng thời gian"
+  },
+  {
+    "id": 3,
+    "hanzi": "安慰",
+    "pinyin": "ānwèi",
+    "vietnamese": "An ủi",
+    "type": "động từ",
+    "example": "安慰他",
+    "examplePinyin": "ānwèi tā",
+    "exampleVietnamese": "An ủi anh ấy"
+  },
+  {
+    "id": 4,
+    "hanzi": "安装",
+    "pinyin": "ānzhuāng",
+    "vietnamese": "Lắp đặt",
+    "type": "động từ",
+    "example": "安装软件",
+    "examplePinyin": "ānzhuāng ruǎnjiàn",
+    "exampleVietnamese": "Cài đặt phần mềm"
+  },
+  {
+    "id": 5,
+    "hanzi": "案件",
+    "pinyin": "ànjiàn",
+    "vietnamese": "Vụ án",
+    "type": "danh từ",
+    "example": "这个案件",
+    "examplePinyin": "zhège ànjiàn",
+    "exampleVietnamese": "Vụ án này"
+  },
+  {
+    "id": 6,
+    "hanzi": "按时",
+    "pinyin": "ànshí",
+    "vietnamese": "Đúng giờ",
+    "type": "phó từ",
+    "example": "按时到达",
+    "examplePinyin": "ànshí dàodá",
+    "exampleVietnamese": "Đến đúng giờ"
+  },
+  {
+    "id": 7,
+    "hanzi": "按照",
+    "pinyin": "ànzhào",
+    "vietnamese": "Theo, tuân theo",
+    "type": "giới từ",
+    "example": "按照规定",
+    "examplePinyin": "ànzhào guīdìng",
+    "exampleVietnamese": "Theo quy định"
+  },
+  {
+    "id": 8,
+    "hanzi": "暗",
+    "pinyin": "àn",
+    "vietnamese": "Tối",
+    "type": "tính từ",
+    "example": "很暗",
+    "examplePinyin": "hěn àn",
+    "exampleVietnamese": "Rất tối"
+  },
+  {
+    "id": 9,
+    "hanzi": "把握",
+    "pinyin": "bǎwò",
+    "vietnamese": "Nắm bắt, chắc chắn",
+    "type": "động từ/danh từ",
+    "example": "有把握",
+    "examplePinyin": "yǒu bǎwò",
+    "exampleVietnamese": "Có chắc chắn"
+  },
+  {
+    "id": 10,
+    "hanzi": "摆",
+    "pinyin": "bǎi",
+    "vietnamese": "Bày, đặt",
+    "type": "động từ",
+    "example": "摆桌子",
+    "examplePinyin": "bǎi zhuōzi",
+    "exampleVietnamese": "Bày bàn"
+  }
+]

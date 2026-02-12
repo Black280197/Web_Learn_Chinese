@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tự Học Tiếng Trung Free - Từ HSK 1 đến HSK 4</title>
+    <meta content="Website học tiếng Trung miễn phí với lộ trình từ cơ bản đến HSK 4" name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e5cb0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons text-primary text-3xl">school</span>
+                    <span class="font-bold text-xl text-gray-900 dark:text-white">Tự Học Tiếng Trung</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-primary font-medium">Trang Chủ</a>
+                    <a href="curriculum.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Lộ Trình</a>
+                    <a href="#resources" class="text-gray-600 dark:text-gray-300 hover:text-primary">Tài Nguyên</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 to-blue-50 dark:from-primary/20 dark:to-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    Học Tiếng Trung Miễn Phí
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Lộ trình học tiếng Trung từ cơ bản đến HSK 4 với các công cụ học tập miễn phí. 
+                    Không cần kiến thức nền, bắt đầu từ con số 0!
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="curriculum.html" 
+                       class="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-all">
+                        Bắt Đầu Học Ngay
+                    </a>
+                    <a href="#learning-path" 
+                       class="bg-white dark:bg-gray-800 text-primary border-2 border-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary/5 transition-all">
+                        Xem Lộ Trình
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HSK Levels Section -->
+    <section id="learning-path" class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Lộ Trình Học HSK</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Từ người mới bắt đầu đến trình độ trung cấp với HSK 4 - khoảng 1200 từ vựng
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- HSK 1 -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">HSK 1</h3>
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">Cơ Bản</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">150 từ vựng cơ bản nhất</p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-green-500 text-sm">check_circle</span>
+                            Pinyin cơ bản
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-green-500 text-sm">check_circle</span>
+                            Số đếm, chào hỏi
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-green-500 text-sm">check_circle</span>
+                            Cấu trúc câu đơn giản
+                        </li>
+                    </ul>
+                    <a href="hsk1.html" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-2 rounded-lg font-medium transition-all">
+                        Bắt Đầu HSK 1
+                    </a>
+                </div>
+
+                <!-- HSK 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">HSK 2</h3>
+                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">Sơ Cấp</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">300 từ (tổng 450 từ)</p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-blue-500 text-sm">check_circle</span>
+                            Giao tiếp hàng ngày
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-blue-500 text-sm">check_circle</span>
+                            Lượng từ cơ bản
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-blue-500 text-sm">check_circle</span>
+                            Thì quá khứ, tương lai
+                        </li>
+                    </ul>
+                    <a href="hsk2.html" class="block w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg font-medium transition-all">
+                        Bắt Đầu HSK 2
+                    </a>
+                </div>
+
+                <!-- HSK 3 -->
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">HSK 3</h3>
+                        <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">Trung Cấp</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">600 từ (tổng 1050 từ)</p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-orange-500 text-sm">check_circle</span>
+                            Diễn đạt phức tạp hơn
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-orange-500 text-sm">check_circle</span>
+                            Đọc văn bản ngắn
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-orange-500 text-sm">check_circle</span>
+                            Ngữ pháp nâng cao
+                        </li>
+                    </ul>
+                    <a href="hsk3.html" class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 rounded-lg font-medium transition-all">
+                        Bắt Đầu HSK 3
+                    </a>
+                </div>
+
+                <!-- HSK 4 -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">HSK 4</h3>
+                        <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">Thành Thạo</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">600 từ (tổng 1650 từ)</p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-purple-500 text-sm">check_circle</span>
+                            Giao tiếp thành thạo
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-purple-500 text-sm">check_circle</span>
+                            Đọc báo, xem phim
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-purple-500 text-sm">check_circle</span>
+                            Viết văn bản đơn giản
+                        </li>
+                    </ul>
+                    <a href="hsk4.html" class="block w-full bg-purple-500 hover:bg-purple-600 text-white text-center py-2 rounded-lg font-medium transition-all">
+                        Bắt Đầu HSK 4
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Modules -->
+    <section class="py-16 bg-background-light dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Công Cụ Học Tập</h2>
+                <p class="text-gray-600 dark:text-gray-300">Các công cụ miễn phí giúp bạn học tiếng Trung hiệu quả</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pinyin -->
+                <a href="Pinyin.html" class="block bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-red-500 text-3xl">volume_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Học Pinyin</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        Hệ thống phiên âm La-tinh cho tiếng Trung. Học 21 thanh mẫu và 38 vận mẫu.
+                    </p>
+                    <span class="text-primary text-sm font-medium">Bắt đầu học →</span>
+                </a>
+
+                <!-- Radicals -->
+                <a href="BoThuChuHan.html" class="block bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-500 text-3xl">grid_on</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bộ Thủ & Chữ Hán</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        Học 214 bộ thủ và thứ tự nét viết chữ Hán. Nền tảng quan trọng nhất.
+                    </p>
+                    <span class="text-primary text-sm font-medium">Bắt đầu học →</span>
+                </a>
+
+                <!-- Flashcards -->
+                <a href="Flashcards.html" class="block bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-blue-500 text-3xl">style</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Flashcards Từ Vựng</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        Học từ vựng HSK với phương pháp flashcard. Ghi nhớ nhanh, hiệu quả.
+                    </p>
+                    <span class="text-primary text-sm font-medium">Bắt đầu học →</span>
+                </a>
+
+                <!-- Grammar -->
+                <a href="grammar.html" class="block bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-purple-500 text-3xl">menu_book</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Ngữ Pháp & Luyện Tập</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        Học ngữ pháp từ cơ bản đến nâng cao. Luyện tập với bài tập thực hành.
+                    </p>
+                    <span class="text-primary text-sm font-medium">Bắt đầu học →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Tài Nguyên Học Tập Miễn Phí</h2>
+                <p class="text-gray-600 dark:text-gray-300">Các nguồn tài liệu và công cụ hỗ trợ thêm</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-3">Website Học Tập</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="https://resources.allsetlearning.com/chinese/grammar" target="_blank" 
+                               class="text-primary hover:underline flex items-center gap-1">
+                                <span class="material-icons text-sm">open_in_new</span>
+                                Chinese Grammar Wiki
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.archchinese.com" target="_blank" 
+                               class="text-primary hover:underline flex items-center gap-1">
+                                <span class="material-icons text-sm">open_in_new</span>
+                                Arch Chinese
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.hskhsk.com/word-lists.html" target="_blank" 
+                               class="text-primary hover:underline flex items-center gap-1">
+                                <span class="material-icons text-sm">open_in_new</span>
+                                HSK Vocabulary Lists
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-3">Ứng Dụng Mobile</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-primary text-sm">phone_android</span>
+                            <span class="text-gray-600 dark:text-gray-400">HelloChinese - Tốt cho người mới</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-primary text-sm">phone_android</span>
+                            <span class="text-gray-600 dark:text-gray-400">Pleco - Từ điển tốt nhất</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-primary text-sm">phone_android</span>
+                            <span class="text-gray-600 dark:text-gray-400">Anki - Flashcard miễn phí</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-3">YouTube Channels</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-red-500 text-sm">play_circle</span>
+                            <span class="text-gray-600 dark:text-gray-400">ChinesePod</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-red-500 text-sm">play_circle</span>
+                            <span class="text-gray-600 dark:text-gray-400">Learn Chinese with Emma</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-icons text-red-500 text-sm">play_circle</span>
+                            <span class="text-gray-600 dark:text-gray-400">Mandarin Corner</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-blue-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Sẵn Sàng Bắt Đầu Học Tiếng Trung?</h2>
+            <p class="text-lg mb-8 opacity-90">
+                Hành trình ngàn dặm bắt đầu từ một bước chân. 千里之行，始于足下
+            </p>
+            <a href="curriculum.html" 
+               class="inline-block bg-white text-primary font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all">
+                Xem Lộ Trình Học Đầy Đủ
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p class="mb-2">© 2026 Tự Học Tiếng Trung Free by BlackNDC</p>
+                <p>Website học tiếng Trung miễn phí - Tài liệu mở và hoàn toàn miễn phí</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

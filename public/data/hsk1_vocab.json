@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "hanzi": "爱",
+    "pinyin": "ài",
+    "vietnamese": "Yêu, thích",
+    "type": "động từ",
+    "example": "我爱你",
+    "examplePinyin": "Wǒ ài nǐ",
+    "exampleVietnamese": "Tôi yêu bạn"
+  },
+  {
+    "id": 2,
+    "hanzi": "八",
+    "pinyin": "bā",
+    "vietnamese": "Tám",
+    "type": "số từ",
+    "example": "八点",
+    "examplePinyin": "bā diǎn",
+    "exampleVietnamese": "8 giờ"
+  },
+  {
+    "id": 3,
+    "hanzi": "爸爸",
+    "pinyin": "bàba",
+    "vietnamese": "Bố, ba",
+    "type": "danh từ",
+    "example": "我爸爸",
+    "examplePinyin": "wǒ bàba",
+    "exampleVietnamese": "Bố tôi"
+  },
+  {
+    "id": 4,
+    "hanzi": "杯子",
+    "pinyin": "bēizi",
+    "vietnamese": "Cốc, ly",
+    "type": "danh từ",
+    "example": "一个杯子",
+    "examplePinyin": "yīgè bēizi",
+    "exampleVietnamese": "Một cái cốc"
+  },
+  {
+    "id": 5,
+    "hanzi": "北京",
+    "pinyin": "Běijīng",
+    "vietnamese": "Bắc Kinh",
+    "type": "danh từ riêng",
+    "example": "我在北京",
+    "examplePinyin": "Wǒ zài Běijīng",
+    "exampleVietnamese": "Tôi ở Bắc Kinh"
+  },
+  {
+    "id": 6,
+    "hanzi": "本",
+    "pinyin": "běn",
+    "vietnamese": "Quyển (lượng từ cho sách)",
+    "type": "lượng từ",
+    "example": "一本书",
+    "examplePinyin": "yī běn shū",
+    "exampleVietnamese": "Một quyển sách"
+  },
+  {
+    "id": 7,
+    "hanzi": "不",
+    "pinyin": "bù",
+    "vietnamese": "Không",
+    "type": "phó từ",
+    "example": "不好",
+    "examplePinyin": "bù hǎo",
+    "exampleVietnamese": "Không tốt"
+  },
+  {
+    "id": 8,
+    "hanzi": "不客气",
+    "pinyin": "bú kèqi",
+    "vietnamese": "Không có chi",
+    "type": "thành ngữ",
+    "example": "不客气",
+    "examplePinyin": "bú kèqi",
+    "exampleVietnamese": "Không có chi (đáp lại lời cảm ơn)"
+  },
+  {
+    "id": 9,
+    "hanzi": "菜",
+    "pinyin": "cài",
+    "vietnamese": "Món ăn, rau",
+    "type": "danh từ",
+    "example": "这个菜",
+    "examplePinyin": "zhège cài",
+    "exampleVietnamese": "Món ăn này"
+  },
+  {
+    "id": 10,
+    "hanzi": "茶",
+    "pinyin": "chá",
+    "vietnamese": "Trà",
+    "type": "danh từ",
+    "example": "喝茶",
+    "examplePinyin": "hē chá",
+    "exampleVietnamese": "Uống trà"
+  },
+  {
+    "id": 11,
+    "hanzi": "吃",
+    "pinyin": "chī",
+    "vietnamese": "Ăn",
+    "type": "động từ",
+    "example": "吃饭",
+    "examplePinyin": "chī fàn",
+    "exampleVietnamese": "Ăn cơm"
+  },
+  {
+    "id": 12,
+    "hanzi": "出租车",
+    "pinyin": "chūzūchē",
+    "vietnamese": "Taxi",
+    "type": "danh từ",
+    "example": "坐出租车",
+    "examplePinyin": "zuò chūzūchē",
+    "exampleVietnamese": "Đi taxi"
+  },
+  {
+    "id": 13,
+    "hanzi": "打电话",
+    "pinyin": "dǎ diànhuà",
+    "vietnamese": "Gọi điện thoại",
+    "type": "động từ",
+    "example": "给妈妈打电话",
+    "examplePinyin": "gěi māma dǎ diànhuà",
+    "exampleVietnamese": "Gọi điện cho mẹ"
+  },
+  {
+    "id": 14,
+    "hanzi": "大",
+    "pinyin": "dà",
+    "vietnamese": "Lớn, to",
+    "type": "tính từ",
+    "example": "很大",
+    "examplePinyin": "hěn dà",
+    "exampleVietnamese": "Rất lớn"
+  },
+  {
+    "id": 15,
+    "hanzi": "的",
+    "pinyin": "de",
+    "vietnamese": "Của (trợ từ sở hữu)",
+    "type": "trợ từ",
+    "example": "我的书",
+    "examplePinyin": "wǒ de shū",
+    "exampleVietnamese": "Sách của tôi"
+  },
+  {
+    "id": 16,
+    "hanzi": "点",
+    "pinyin": "diǎn",
+    "vietnamese": "Giờ (đơn vị thời gian)",
+    "type": "lượng từ",
+    "example": "三点",
+    "examplePinyin": "sān diǎn",
+    "exampleVietnamese": "3 giờ"
+  },
+  {
+    "id": 17,
+    "hanzi": "电脑",
+    "pinyin": "diànnǎo",
+    "vietnamese": "Máy tính",
+    "type": "danh từ",
+    "example": "用电脑",
+    "examplePinyin": "yòng diànnǎo",
+    "exampleVietnamese": "Dùng máy tính"
+  },
+  {
+    "id": 18,
+    "hanzi": "电视",
+    "pinyin": "diànshì",
+    "vietnamese": "Ti vi",
+    "type": "danh từ",
+    "example": "看电视",
+    "examplePinyin": "kàn diànshì",
+    "exampleVietnamese": "Xem ti vi"
+  },
+  {
+    "id": 19,
+    "hanzi": "东西",
+    "pinyin": "dōngxi",
+    "vietnamese": "Đồ vật, thứ",
+    "type": "danh từ",
+    "example": "买东西",
+    "examplePinyin": "mǎi dōngxi",
+    "exampleVietnamese": "Mua đồ"
+  },
+  {
+    "id": 20,
+    "hanzi": "都",
+    "pinyin": "dōu",
+    "vietnamese": "Đều",
+    "type": "phó từ",
+    "example": "都好",
+    "examplePinyin": "dōu hǎo",
+    "exampleVietnamese": "Đều tốt"
+  },
+  {
+    "id": 21,
+    "hanzi": "读",
+    "pinyin": "dú",
+    "vietnamese": "Đọc",
+    "type": "động từ",
+    "example": "读书",
+    "examplePinyin": "dú shū",
+    "exampleVietnamese": "Đọc sách"
+  },
+  {
+    "id": 22,
+    "hanzi": "对不起",
+    "pinyin": "duìbuqǐ",
+    "vietnamese": "Xin lỗi",
+    "type": "thành ngữ",
+    "example": "对不起，我迟到了",
+    "examplePinyin": "duìbuqǐ, wǒ chídào le",
+    "exampleVietnamese": "Xin lỗi, tôi đến muộn"
+  },
+  {
+    "id": 23,
+    "hanzi": "多",
+    "pinyin": "duō",
+    "vietnamese": "Nhiều",
+    "type": "tính từ",
+    "example": "很多",
+    "examplePinyin": "hěn duō",
+    "exampleVietnamese": "Rất nhiều"
+  },
+  {
+    "id": 24,
+    "hanzi": "多少",
+    "pinyin": "duōshao",
+    "vietnamese": "Bao nhiêu",
+    "type": "từ nghi vấn",
+    "example": "多少钱",
+    "examplePinyin": "duōshao qián",
+    "exampleVietnamese": "Bao nhiêu tiền"
+  },
+  {
+    "id": 25,
+    "hanzi": "儿子",
+    "pinyin": "érzi",
+    "vietnamese": "Con trai",
+    "type": "danh từ",
+    "example": "我儿子",
+    "examplePinyin": "wǒ érzi",
+    "exampleVietnamese": "Con trai tôi"
+  },
+  {
+    "id": 26,
+    "hanzi": "二",
+    "pinyin": "èr",
+    "vietnamese": "Hai",
+    "type": "số từ",
+    "example": "二月",
+    "examplePinyin": "èr yuè",
+    "exampleVietnamese": "Tháng 2"
+  },
+  {
+    "id": 27,
+    "hanzi": "饭店",
+    "pinyin": "fàndiàn",
+    "vietnamese": "Nhà hàng",
+    "type": "danh từ",
+    "example": "去饭店",
+    "examplePinyin": "qù fàndiàn",
+    "exampleVietnamese": "Đi nhà hàng"
+  },
+  {
+    "id": 28,
+    "hanzi": "飞机",
+    "pinyin": "fēijī",
+    "vietnamese": "Máy bay",
+    "type": "danh từ",
+    "example": "坐飞机",
+    "examplePinyin": "zuò fēijī",
+    "exampleVietnamese": "Đi máy bay"
+  },
+  {
+    "id": 29,
+    "hanzi": "分钟",
+    "pinyin": "fēnzhōng",
+    "vietnamese": "Phút",
+    "type": "lượng từ",
+    "example": "十分钟",
+    "examplePinyin": "shí fēnzhōng",
+    "exampleVietnamese": "10 phút"
+  },
+  {
+    "id": 30,
+    "hanzi": "高兴",
+    "pinyin": "gāoxìng",
+    "vietnamese": "Vui vẻ, hạnh phúc",
+    "type": "tính từ",
+    "example": "很高兴",
+    "examplePinyin": "hěn gāoxìng",
+    "exampleVietnamese": "Rất vui"
+  }
+]

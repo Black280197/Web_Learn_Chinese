@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HSK 4 - 600 Từ Vựng Cơ Bản - Tự Học Tiếng Trung</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons text-primary text-3xl">school</span>
+                    <span class="font-bold text-xl text-gray-900 dark:text-white">Tự Học Tiếng Trung</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Trang Chủ</a>
+                    <a href="curriculum.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Lộ Trình</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold">HSK 4</span>
+                        <span class="text-gray-600 dark:text-gray-400">Nâng cao</span>
+                    </div>
+                    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                        HSK 4 - 600 Từ Vựng Nâng Cao
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">
+                        Hoàn thiện kỹ năng giao tiếp với 600 từ vựng nâng cao
+                    </p>
+                </div>
+                <div class="hidden md:block">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-purple-200 dark:border-purple-800">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-purple-500 mb-1" id="progress">0/30</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Từ đã học</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <a href="Flashcards.html" class="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                        <span class="material-icons text-blue-500 text-3xl">style</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Flashcards</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Học với thẻ ghi nhớ</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="Practice.html" class="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                        <span class="material-icons text-purple-500 text-3xl">edit_note</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Luyện Tập</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Bài tập ngữ pháp</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#vocabulary-list" class="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                        <span class="material-icons text-purple-500 text-3xl">list</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 dark:text-white">Danh Sách Từ</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Xem tất cả từ vựng</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Learning Tips -->
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-8 text-white mb-12">
+            <h2 class="text-2xl font-bold mb-4">💡 Cách Học HSK 4 Hiệu Quả</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <span class="material-icons">schedule</span>
+                        Thời gian học
+                    </h3>
+                    <p class="text-purple-50">Học 10-15 từ mỗi ngày, mất khoảng 6-8 tháng để hoàn thành HSK 4</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <span class="material-icons">repeat</span>
+                        Ôn tập
+                    </h3>
+                    <p class="text-purple-50">Ôn lại từ cũ mỗi ngày. Sử dụng flashcards để ghi nhớ lâu dài</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <span class="material-icons">edit</span>
+                        Luyện viết
+                    </h3>
+                    <p class="text-purple-50">Viết tay mỗi chữ Hán 10-20 lần. Nắm vững thứ tự nét</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <span class="material-icons">hearing</span>
+                        Luyện nghe
+                    </h3>
+                    <p class="text-purple-50">Nghe phát âm đúng và lặp lại nhiều lần mỗi ngày</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocabulary List -->
+        <div id="vocabulary-list">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Danh Sách Từ Vựng HSK 4</h2>
+                <div class="flex gap-2">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm từ..." 
+                           class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-800 dark:text-white">
+                </div>
+            </div>
+
+            <div id="vocabContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Vocabulary cards will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-gray-600 dark:text-gray-400 text-sm">
+                <p class="mb-2">© 2026 Tự Học Tiếng Trung Free by BlackNDC</p>
+                <div class="flex justify-center gap-4 mt-4">
+                    <a href="curriculum.html" class="text-primary hover:underline">Xem lộ trình học đầy đủ →</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Load vocabulary data
+        let vocabData = [];
+        let learnedWords = new Set(JSON.parse(localStorage.getItem('hsk4_learned') || '[]'));
+
+        async function loadVocabulary() {
+            try {
+                const response = await fetch('data/hsk4_vocab.json');
+                vocabData = await response.json();
+                renderVocabulary(vocabData);
+                updateProgress();
+            } catch (error) {
+                console.error('Error loading vocabulary:', error);
+                // Fallback data if file doesn't load
+                vocabData = [
+                    {
+                        id: 1,
+                        hanzi: "爱",
+                        pinyin: "ài",
+                        vietnamese: "Yêu, thích",
+                        type: "động từ",
+                        example: "我爱你",
+                        examplePinyin: "Wǒ ài nǐ",
+                        exampleVietnamese: "Tôi yêu bạn"
+                    }
+                ];
+                renderVocabulary(vocabData);
+            }
+        }
+
+        function renderVocabulary(data) {
+            const container = document.getElementById('vocabContainer');
+            container.innerHTML = data.map(word => `
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all ${learnedWords.has(word.id) ? 'opacity-60' : ''}">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="font-chinese text-3xl font-bold text-gray-900 dark:text-white mb-1">${word.hanzi}</div>
+                            <div class="text-purple-500 font-medium text-lg">${word.pinyin}</div>
+                        </div>
+                        <button onclick="toggleLearned(${word.id})" class="text-2xl ${learnedWords.has(word.id) ? 'text-purple-500' : 'text-gray-300'}">
+                            <span class="material-icons">${learnedWords.has(word.id) ? 'check_circle' : 'radio_button_unchecked'}</span>
+                        </button>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-2 py-1 rounded">${word.type}</span>
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 font-medium mb-3">${word.vietnamese}</div>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 rounded p-3 text-sm">
+                        <div class="font-chinese text-gray-900 dark:text-white">${word.example}</div>
+                        <div class="text-purple-500 text-xs mt-1">${word.examplePinyin}</div>
+                        <div class="text-gray-600 dark:text-gray-400 text-xs mt-1">${word.exampleVietnamese}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleLearned(id) {
+            if (learnedWords.has(id)) {
+                learnedWords.delete(id);
+            } else {
+                learnedWords.add(id);
+            }
+            localStorage.setItem('hsk4_learned', JSON.stringify([...learnedWords]));
+            renderVocabulary(vocabData);
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progressEl = document.getElementById('progress');
+            if (progressEl) {
+                progressEl.textContent = `${learnedWords.size}/${vocabData.length}`;
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchInput')?.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = vocabData.filter(word => 
+                word.hanzi.includes(searchTerm) ||
+                word.pinyin.toLowerCase().includes(searchTerm) ||
+                word.vietnamese.toLowerCase().includes(searchTerm)
+            );
+            renderVocabulary(filtered);
+        });
+
+        // Load data on page load
+        loadVocabulary();
+    </script>
+</body>
+
+</html>

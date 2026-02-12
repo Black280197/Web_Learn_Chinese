@@ -1,0 +1,260 @@
+[
+  {
+    "id": 1,
+    "level": "HSK1",
+    "title": "Trật tự từ SVO (Subject-Verb-Object)",
+    "description": "Cấu trúc câu cơ bản: Chủ ngữ + Động từ + Tân ngữ",
+    "explanation": "Tiếng Trung có trật tự từ rất giống với tiếng Việt và tiếng Anh. Cấu trúc cơ bản nhất là Chủ ngữ (S) + Động từ (V) + Tân ngữ (O).",
+    "examples": [
+      {
+        "hanzi": "我爱你",
+        "pinyin": "Wǒ ài nǐ",
+        "vietnamese": "Tôi yêu bạn",
+        "breakdown": "我(wǒ-tôi) + 爱(ài-yêu) + 你(nǐ-bạn)"
+      },
+      {
+        "hanzi": "他喝咖啡",
+        "pinyin": "Tā hē kāfēi",
+        "vietnamese": "Anh ấy uống cà phê",
+        "breakdown": "他(tā-anh ấy) + 喝(hē-uống) + 咖啡(kāfēi-cà phê)"
+      },
+      {
+        "hanzi": "我看书",
+        "pinyin": "Wǒ kàn shū",
+        "vietnamese": "Tôi đọc sách",
+        "breakdown": "我(wǒ-tôi) + 看(kàn-đọc/xem) + 书(shū-sách)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "level": "HSK1",
+    "title": "Trợ từ 的 (de) - Sở hữu",
+    "description": "Dùng 的 để chỉ sự sở hữu (của)",
+    "explanation": "的(de) đặt giữa người sở hữu và vật được sở hữu, giống như 'của' trong tiếng Việt. Công thức: A 的 B = B của A",
+    "examples": [
+      {
+        "hanzi": "我的书",
+        "pinyin": "wǒ de shū",
+        "vietnamese": "Sách của tôi",
+        "breakdown": "我(wǒ-tôi) + 的(de-của) + 书(shū-sách)"
+      },
+      {
+        "hanzi": "他的朋友",
+        "pinyin": "tā de péngyou",
+        "vietnamese": "Bạn của anh ấy",
+        "breakdown": "他(tā-anh ấy) + 的(de-của) + 朋友(péngyou-bạn)"
+      },
+      {
+        "hanzi": "妈妈的手机",
+        "pinyin": "māma de shǒujī",
+        "vietnamese": "Điện thoại của mẹ",
+        "breakdown": "妈妈(māma-mẹ) + 的(de-của) + 手机(shǒujī-điện thoại)"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "level": "HSK1",
+    "title": "Câu hỏi với 吗 (ma)",
+    "description": "Biến câu kể thành câu hỏi Yes/No",
+    "explanation": "Thêm 吗(ma) vào cuối câu kể để tạo thành câu hỏi Yes/No. Đây là cách đơn giản nhất để hỏi trong tiếng Trung.",
+    "examples": [
+      {
+        "hanzi": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "vietnamese": "Bạn khỏe không?",
+        "breakdown": "你好(nǐ hǎo-bạn khỏe) + 吗(ma-không)"
+      },
+      {
+        "hanzi": "你是学生吗？",
+        "pinyin": "Nǐ shì xuésheng ma?",
+        "vietnamese": "Bạn là sinh viên phải không?",
+        "breakdown": "你是学生(nǐ shì xuésheng-bạn là sinh viên) + 吗(ma)"
+      },
+      {
+        "hanzi": "这是你的书吗？",
+        "pinyin": "Zhè shì nǐ de shū ma?",
+        "vietnamese": "Đây là sách của bạn phải không?",
+        "breakdown": "这是你的书(zhè shì nǐ de shū-đây là sách của bạn) + 吗(ma)"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "level": "HSK1",
+    "title": "Phó từ 不 (bù) - Phủ định",
+    "description": "Dùng 不 để phủ định động từ và tính từ",
+    "explanation": "不(bù) đặt trước động từ hoặc tính từ để phủ định. Lưu ý: 不 đọc là 'bú' khi đứng trước dấu thanh 4.",
+    "examples": [
+      {
+        "hanzi": "我不喝咖啡",
+        "pinyin": "Wǒ bù hē kāfēi",
+        "vietnamese": "Tôi không uống cà phê",
+        "breakdown": "我(wǒ-tôi) + 不(bù-không) + 喝(hē-uống) + 咖啡(kāfēi)"
+      },
+      {
+        "hanzi": "他不是老师",
+        "pinyin": "Tā bú shì lǎoshī",
+        "vietnamese": "Anh ấy không phải là giáo viên",
+        "breakdown": "他(tā-anh ấy) + 不是(bú shì-không phải là) + 老师(lǎoshī-giáo viên)"
+      },
+      {
+        "hanzi": "今天不热",
+        "pinyin": "Jīntiān bú rè",
+        "vietnamese": "Hôm nay không nóng",
+        "breakdown": "今天(jīntiān-hôm nay) + 不(bú-không) + 热(rè-nóng)"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "level": "HSK1",
+    "title": "Lượng từ cơ bản - 个 (gè)",
+    "description": "Lượng từ chung nhất trong tiếng Trung",
+    "explanation": "个(gè) là lượng từ đa năng nhất, dùng cho hầu hết danh từ. Công thức: Số từ + 个 + Danh từ",
+    "examples": [
+      {
+        "hanzi": "一个人",
+        "pinyin": "yī gè rén",
+        "vietnamese": "Một người",
+        "breakdown": "一(yī-một) + 个(gè-cái) + 人(rén-người)"
+      },
+      {
+        "hanzi": "三个苹果",
+        "pinyin": "sān gè píngguǒ",
+        "vietnamese": "Ba quả táo",
+        "breakdown": "三(sān-ba) + 个(gè-quả) + 苹果(píngguǒ-táo)"
+      },
+      {
+        "hanzi": "两个朋友",
+        "pinyin": "liǎng gè péngyou",
+        "vietnamese": "Hai người bạn",
+        "breakdown": "两(liǎng-hai) + 个(gè-người) + 朋友(péngyou-bạn)"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "level": "HSK2",
+    "title": "Trợ từ quá khứ 了 (le)",
+    "description": "Chỉ hành động đã hoàn thành",
+    "explanation": "了(le) đặt sau động từ để chỉ hành động đã hoàn thành hoặc thay đổi trạng thái. Công thức: Chủ ngữ + Động từ + 了 + Tân ngữ",
+    "examples": [
+      {
+        "hanzi": "我吃了饭",
+        "pinyin": "Wǒ chī le fàn",
+        "vietnamese": "Tôi đã ăn cơm rồi",
+        "breakdown": "我(wǒ-tôi) + 吃(chī-ăn) + 了(le-rồi) + 饭(fàn-cơm)"
+      },
+      {
+        "hanzi": "他去了北京",
+        "pinyin": "Tā qù le Běijīng",
+        "vietnamese": "Anh ấy đã đi Bắc Kinh",
+        "breakdown": "他(tā-anh ấy) + 去(qù-đi) + 了(le-rồi) + 北京(Běijīng)"
+      },
+      {
+        "hanzi": "我买了一本书",
+        "pinyin": "Wǒ mǎi le yī běn shū",
+        "vietnamese": "Tôi đã mua một quyển sách",
+        "breakdown": "我买(wǒ mǎi-tôi mua) + 了(le) + 一本书(yī běn shū-một quyển sách)"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "level": "HSK2",
+    "title": "Từ nghi vấn 什么 (shénme) - Gì/Cái gì",
+    "description": "Hỏi về sự vật, sự việc",
+    "explanation": "什么(shénme) đặt ở vị trí của từ cần hỏi trong câu, không cần thêm 吗.",
+    "examples": [
+      {
+        "hanzi": "这是什么？",
+        "pinyin": "Zhè shì shénme?",
+        "vietnamese": "Đây là cái gì?",
+        "breakdown": "这是(zhè shì-đây là) + 什么(shénme-cái gì)"
+      },
+      {
+        "hanzi": "你喝什么？",
+        "pinyin": "Nǐ hē shénme?",
+        "vietnamese": "Bạn uống gì?",
+        "breakdown": "你喝(nǐ hē-bạn uống) + 什么(shénme-gì)"
+      },
+      {
+        "hanzi": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "vietnamese": "Bạn tên là gì?",
+        "breakdown": "你叫(nǐ jiào-bạn gọi/tên) + 什么名字(shénme míngzi-tên gì)"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "level": "HSK2",
+    "title": "Giới từ 在 (zài) - Ở, tại",
+    "description": "Chỉ vị trí, địa điểm",
+    "explanation": "在(zài) đứng trước địa điểm để chỉ vị trí. Có thể là động từ 'ở' hoặc giới từ chỉ địa điểm hành động.",
+    "examples": [
+      {
+        "hanzi": "我在家",
+        "pinyin": "Wǒ zài jiā",
+        "vietnamese": "Tôi ở nhà",
+        "breakdown": "我(wǒ-tôi) + 在(zài-ở) + 家(jiā-nhà)"
+      },
+      {
+        "hanzi": "他在学校学习",
+        "pinyin": "Tā zài xuéxiào xuéxí",
+        "vietnamese": "Anh ấy học ở trường",
+        "breakdown": "他(tā-anh ấy) + 在学校(zài xuéxiào-ở trường) + 学习(xuéxí-học)"
+      },
+      {
+        "hanzi": "书在桌子上",
+        "pinyin": "Shū zài zhuōzi shàng",
+        "vietnamese": "Sách ở trên bàn",
+        "breakdown": "书(shū-sách) + 在(zài-ở) + 桌子上(zhuōzi shàng-trên bàn)"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "level": "HSK3",
+    "title": "Giới từ 把 (bǎ) - Cấu trúc 把",
+    "description": "Nhấn mạnh tác động lên tân ngữ",
+    "explanation": "Cấu trúc 把 di chuyển tân ngữ lên trước động từ để nhấn mạnh tác động. Công thức: Chủ ngữ + 把 + Tân ngữ + Động từ + Kết quả",
+    "examples": [
+      {
+        "hanzi": "我把书放在桌子上了",
+        "pinyin": "Wǒ bǎ shū fàng zài zhuōzi shàng le",
+        "vietnamese": "Tôi đã đặt sách lên bàn",
+        "breakdown": "我(wǒ-tôi) + 把书(bǎ shū-lấy sách) + 放在桌子上(fàng zài zhuōzi shàng-đặt lên bàn) + 了(le)"
+      },
+      {
+        "hanzi": "他把门关上了",
+        "pinyin": "Tā bǎ mén guān shàng le",
+        "vietnamese": "Anh ấy đã đóng cửa lại",
+        "breakdown": "他(tā-anh ấy) + 把门(bǎ mén-lấy cửa) + 关上(guān shàng-đóng lại) + 了(le)"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "level": "HSK3",
+    "title": "Trợ từ kinh nghiệm 过 (guò)",
+    "description": "Chỉ trải nghiệm đã từng làm",
+    "explanation": "过(guò) đặt sau động từ để chỉ kinh nghiệm đã từng có. Khác với 了(le) chỉ hành động cụ thể đã hoàn thành.",
+    "examples": [
+      {
+        "hanzi": "我去过中国",
+        "pinyin": "Wǒ qù guò Zhōngguó",
+        "vietnamese": "Tôi đã từng đi Trung Quốc",
+        "breakdown": "我(wǒ-tôi) + 去(qù-đi) + 过(guò-từng) + 中国(Zhōngguó-Trung Quốc)"
+      },
+      {
+        "hanzi": "你吃过北京烤鸭吗？",
+        "pinyin": "Nǐ chī guò Běijīng kǎoyā ma?",
+        "vietnamese": "Bạn đã từng ăn vịt quay Bắc Kinh chưa?",
+        "breakdown": "你吃过(nǐ chī guò-bạn từng ăn) + 北京烤鸭(Běijīng kǎoyā-vịt quay BK) + 吗(ma)"
+      }
+    ]
+  }
+]

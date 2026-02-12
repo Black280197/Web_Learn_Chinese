@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ngữ Pháp Tiếng Trung - Tự Học Tiếng Trung Free</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons text-primary text-3xl">school</span>
+                    <span class="font-bold text-xl text-gray-900 dark:text-white">Tự Học Tiếng Trung</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Trang Chủ</a>
+                    <a href="curriculum.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Lộ Trình</a>
+                    <a href="grammar.html" class="text-primary font-medium">Ngữ Pháp</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Ngữ Pháp Tiếng Trung
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Học ngữ pháp từ cơ bản đến nâng cao với các ví dụ minh họa chi tiết
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex gap-4 py-4 overflow-x-auto">
+                <button onclick="filterGrammar('all')" 
+                        class="filter-btn active px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap"
+                        data-filter="all">
+                    Tất Cả
+                </button>
+                <button onclick="filterGrammar('HSK1')" 
+                        class="filter-btn px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap"
+                        data-filter="HSK1">
+                    HSK 1
+                </button>
+                <button onclick="filterGrammar('HSK2')" 
+                        class="filter-btn px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap"
+                        data-filter="HSK2">
+                    HSK 2
+                </button>
+                <button onclick="filterGrammar('HSK3')" 
+                        class="filter-btn px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap"
+                        data-filter="HSK3">
+                    HSK 3
+                </button>
+                <button onclick="filterGrammar('HSK4')" 
+                        class="filter-btn px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap"
+                        data-filter="HSK4">
+                    HSK 4
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Lessons -->
+    <section class="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="grammarContainer" class="space-y-4">
+            <!-- Grammar lessons will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-gray-600 dark:text-gray-400 text-sm">
+                <p class="mb-2">© 2026 Tự Học Tiếng Trung Free by BlackNDC</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let allLessons = [];
+        let currentFilter = 'all';
+
+        // Level colors
+        const levelColors = {
+            'HSK1': 'green',
+            'HSK2': 'blue',
+            'HSK3': 'orange',
+            'HSK4': 'purple'
+        };
+
+        async function loadGrammarLessons() {
+            try {
+                const response = await fetch('data/grammar_lessons.json');
+                allLessons = await response.json();
+                renderGrammar(allLessons);
+            } catch (error) {
+                console.error('Error loading grammar lessons:', error);
+            }
+        }
+
+        function renderGrammar(lessons) {
+            const container = document.getElementById('grammarContainer');
+            container.innerHTML = lessons.map((lesson, index) => {
+                const color = levelColors[lesson.level];
+                return `
+                    <div class="accordion-item bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden" data-level="${lesson.level}">
+                        <button onclick="toggleAccordion(this)"
+                            class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none">
+                            <div class="flex items-center gap-4 text-left">
+                                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-${color}-100 dark:bg-${color}-900/30 text-${color}-600 dark:text-${color}-400 font-bold">
+                                    ${index + 1}
+                                </span>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs bg-${color}-100 dark:bg-${color}-900/30 text-${color}-600 dark:text-${color}-400 px-2 py-0.5 rounded-full font-bold">
+                                            ${lesson.level}
+                                        </span>
+                                    </div>
+                                    <h3 class="font-bold text-gray-900 dark:text-white text-lg">${lesson.title}</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">${lesson.description}</p>
+                                </div>
+                            </div>
+                            <span class="material-icons accordion-icon text-gray-400 transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content border-t border-gray-100 dark:border-gray-700">
+                            <div class="px-6 py-6 space-y-6">
+                                <!-- Explanation -->
+                                <div class="bg-${color}-50 dark:bg-${color}-900/20 p-4 rounded-lg border border-${color}-100 dark:border-${color}-800/30">
+                                    <p class="text-gray-700 dark:text-gray-300">${lesson.explanation}</p>
+                                </div>
+                                
+                                <!-- Examples -->
+                                <div class="space-y-3">
+                                    <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Ví dụ</h4>
+                                    ${lesson.examples.map(example => `
+                                        <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 hover:bg-white dark:hover:bg-gray-800 hover:shadow-md transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700">
+                                            <div class="font-chinese text-2xl font-medium text-gray-900 dark:text-white mb-2">
+                                                ${example.hanzi}
+                                            </div>
+                                            <div class="text-${color}-500 font-medium mb-1">${example.pinyin}</div>
+                                            <div class="text-gray-700 dark:text-gray-300 mb-2">${example.vietnamese}</div>
+                                            <div class="text-xs text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 p-2 rounded">
+                                                ${example.breakdown}
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const wasActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        function filterGrammar(level) {
+            currentFilter = level;
+            
+            // Update button styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                btn.classList.add('bg-gray-100', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            
+            const activeBtn = document.querySelector(`[data-filter="${level}"]`);
+            activeBtn.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            activeBtn.classList.add('active', 'bg-primary', 'text-white');
+            
+            // Filter lessons
+            const filtered = level === 'all' ? allLessons : allLessons.filter(l => l.level === level);
+            renderGrammar(filtered);
+        }
+
+        // Initialize styles for filter buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (!btn.classList.contains('active')) {
+                    btn.classList.add('bg-gray-100', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+                } else {
+                    btn.classList.add('bg-primary', 'text-white');
+                }
+            });
+        });
+
+        // Load lessons on page load
+        loadGrammarLessons();
+    </script>
+</body>
+
+</html>

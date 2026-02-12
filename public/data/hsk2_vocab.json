@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "hanzi": "阿姨",
+    "pinyin": "āyí",
+    "vietnamese": "Dì, cô (gọi phụ nữ trung niên)",
+    "type": "danh từ",
+    "example": "王阿姨",
+    "examplePinyin": "Wáng āyí",
+    "exampleVietnamese": "Cô Vương"
+  },
+  {
+    "id": 2,
+    "hanzi": "啊",
+    "pinyin": "a",
+    "vietnamese": "À, ơi (trợ từ cảm thán)",
+    "type": "trợ từ",
+    "example": "好啊",
+    "examplePinyin": "hǎo a",
+    "exampleVietnamese": "Tốt ơi!"
+  },
+  {
+    "id": 3,
+    "hanzi": "吧",
+    "pinyin": "ba",
+    "vietnamese": "Nhỉ, đi (trợ từ gợi ý)",
+    "type": "trợ từ",
+    "example": "走吧",
+    "examplePinyin": "zǒu ba",
+    "exampleVietnamese": "Đi thôi"
+  },
+  {
+    "id": 4,
+    "hanzi": "白",
+    "pinyin": "bái",
+    "vietnamese": "Trắng",
+    "type": "tính từ",
+    "example": "白色",
+    "examplePinyin": "bái sè",
+    "exampleVietnamese": "Màu trắng"
+  },
+  {
+    "id": 5,
+    "hanzi": "百",
+    "pinyin": "bǎi",
+    "vietnamese": "Trăm",
+    "type": "số từ",
+    "example": "一百",
+    "examplePinyin": "yī bǎi",
+    "exampleVietnamese": "Một trăm"
+  },
+  {
+    "id": 6,
+    "hanzi": "帮助",
+    "pinyin": "bāngzhù",
+    "vietnamese": "Giúp đỡ",
+    "type": "động từ",
+    "example": "帮助我",
+    "examplePinyin": "bāngzhù wǒ",
+    "exampleVietnamese": "Giúp tôi"
+  },
+  {
+    "id": 7,
+    "hanzi": "报纸",
+    "pinyin": "bàozhǐ",
+    "vietnamese": "Báo chí",
+    "type": "danh từ",
+    "example": "看报纸",
+    "examplePinyin": "kàn bàozhǐ",
+    "exampleVietnamese": "Đọc báo"
+  },
+  {
+    "id": 8,
+    "hanzi": "比较",
+    "pinyin": "bǐjiào",
+    "vietnamese": "So sánh, khá",
+    "type": "phó từ/động từ",
+    "example": "比较好",
+    "examplePinyin": "bǐjiào hǎo",
+    "exampleVietnamese": "Khá tốt"
+  },
+  {
+    "id": 9,
+    "hanzi": "别",
+    "pinyin": "bié",
+    "vietnamese": "Đừng",
+    "type": "phó từ",
+    "example": "别走",
+    "examplePinyin": "bié zǒu",
+    "exampleVietnamese": "Đừng đi"
+  },
+  {
+    "id": 10,
+    "hanzi": "宾馆",
+    "pinyin": "bīnguǎn",
+    "vietnamese": "Khách sạn",
+    "type": "danh từ",
+    "example": "住宾馆",
+    "examplePinyin": "zhù bīnguǎn",
+    "exampleVietnamese": "Ở khách sạn"
+  }
+]
