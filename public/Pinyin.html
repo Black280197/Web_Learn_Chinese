@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tự Học Tiếng Trung - Pinyin Section</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b63b9",
+                        "primary-light": "#e0effd",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2530",
+                        "text-light": "#1e293b", // Slate 800
+                        "text-dark": "#f1f5f9", // Slate 100
+                        "text-muted-light": "#64748b", // Slate 500
+                        "text-muted-dark": "#94a3b8", // Slate 400
+                        "border-light": "#e2e8f0", // Slate 200
+                        "border-dark": "#2d3a4a",
+                        // Tone colors
+                        "tone-1": "#ef4444",
+                        "tone-2": "#f97316",
+                        "tone-3": "#22c55e",
+                        "tone-4": "#3b82f6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for pinyin table */
+        .pinyin-scroll::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+
+        .pinyin-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .pinyin-scroll::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark .pinyin-scroll::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+
+        .pinyin-cell:hover {
+            transform: scale(1.05);
+            transition: transform 0.1s;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark min-h-screen flex flex-col transition-colors duration-200">
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-sm border-b border-border-light dark:border-border-dark shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo & Brand -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                        <div class="bg-primary/10 p-2 rounded-lg">
+                            <span class="material-icons text-primary text-2xl">translate</span>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-primary">Tự Học Tiếng Trung<span
+                                class="font-normal text-text-muted-light dark:text-text-muted-dark text-sm ml-1">Free</span></span>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:ml-10 md:flex md:space-x-2">
+                        <a class="bg-primary/10 text-primary px-3 py-2 rounded-lg text-sm font-semibold transition-colors"
+                            href="#">Pinyin</a>
+                        <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:bg-primary/5 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            href="#">Bộ Thủ</a>
+                        <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:bg-primary/5 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            href="#">HSK</a>
+                        <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:bg-primary/5 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            href="#">Ngữ Pháp</a>
+                        <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary hover:bg-primary/5 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            href="#">Tiến Độ</a>
+                    </div>
+                </div>
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-4">
+                    <button
+                        class="p-2 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-background-light dark:hover:bg-background-dark focus:outline-none">
+                        <span class="material-icons">notifications_none</span>
+                    </button>
+                    <div
+                        class="hidden md:flex items-center gap-3 pl-4 border-l border-border-light dark:border-border-dark">
+                        <div class="flex flex-col items-end">
+                            <span class="text-sm font-semibold">Minh Anh</span>
+                            <span class="text-xs text-text-muted-light dark:text-text-muted-dark">HSK 1 Student</span>
+                        </div>
+                        <img alt="User Profile"
+                            class="h-9 w-9 rounded-full border-2 border-primary/20 p-0.5 object-cover"
+                            data-alt="User profile avatar of a smiling young woman"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYJh_GUGHOecdShbyHxVMpzc3F8mHoZeZLONHJjVcZ3ppe6KUwuF6iDigcO0iqhLjWUKtL4X0IdExJAJhkfwfeINYkFfetBwpM7VUeH-WDa8nt_W60UkPsIsdJUQC7NhXTvp1d5OdYxMe8iiDhaYTL6TR7yGVa1Lv0x1UHOc31VmdII5MZi0-RcclMztXsJV-CVsTHjH6k-Zo5rzfamVHVCqCnN_b4DxJXfr6EBkSgKBsca-WTM7SyHJb37O8zKjB4PbsoWeV1odG" />
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center md:hidden">
+                        <button
+                            class="inline-flex items-center justify-center p-2 rounded-md text-text-muted-light hover:text-primary focus:outline-none"
+                            type="button">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-text-light dark:text-text-dark mb-2">Bảng Pinyin (Phiên âm)</h1>
+            <p class="text-text-muted-light dark:text-text-muted-dark max-w-3xl">
+                Bảng phiên âm tiếng Trung Quốc đầy đủ. Nhấn vào từng ô để nghe cách phát âm chuẩn của người bản xứ. Kết
+                hợp thanh mẫu (hàng dọc) và vận mẫu (hàng ngang).
+            </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Column: Pinyin Grid (Main Tool) -->
+            <div class="lg:col-span-9">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden flex flex-col h-[600px] lg:h-[750px]">
+                    <!-- Grid Controls/Legend -->
+                    <div
+                        class="p-4 border-b border-border-light dark:border-border-dark flex flex-wrap items-center justify-between gap-4 bg-background-light/50 dark:bg-background-dark/50">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Mẹo</span>
+                            <span class="text-sm text-text-muted-light dark:text-text-muted-dark">Di chuột để xem chi
+                                tiết, click để nghe.</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm">
+                            <div class="flex items-center gap-1">
+                                <span class="w-3 h-3 rounded-full bg-primary"></span>
+                                <span class="text-text-muted-light dark:text-text-muted-dark">Có âm đọc</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="w-3 h-3 rounded-full bg-gray-200 dark:bg-gray-700"></span>
+                                <span class="text-text-muted-light dark:text-text-muted-dark">Không kết hợp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scrollable Table Container -->
+                    <div class="overflow-auto pinyin-scroll flex-grow relative">
+                        <table class="w-full text-center border-collapse">
+                            <thead class="bg-background-light dark:bg-background-dark sticky top-0 z-10 shadow-sm">
+                                <tr>
+                                    <th
+                                        class="p-3 font-semibold text-primary sticky left-0 z-20 bg-background-light dark:bg-background-dark border-r border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        Initials
+                                    </th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        a</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        o</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        e</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        i</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        u</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        ü</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        ai</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        ei</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        ao</th>
+                                    <th
+                                        class="p-3 font-medium text-text-muted-light dark:text-text-muted-dark border-b border-border-light dark:border-border-dark min-w-[60px]">
+                                        ou</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-light dark:divide-border-dark">
+                                <!-- Row b -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        b</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ba</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bo</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bi</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bu</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">bao</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                </tr>
+                                <!-- Row p -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        p</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pa</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">po</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pi</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pu</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">pou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row m -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        m</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ma</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mo</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">me</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mi</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mu</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">mou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row f -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        f</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">fa</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">fo</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">fu</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">fei</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">fou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row d -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        d</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">da</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">de</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">di</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">du</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">dai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">dei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">dao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">dou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row t -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        t</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ta</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">te</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ti</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">tu</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">tai</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">tao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">tou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row n -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        n</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">na</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ne</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">ni</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nu</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nü</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">nou</button>
+                                    </td>
+                                </tr>
+                                <!-- Row l -->
+                                <tr class="group hover:bg-primary/5 transition-colors">
+                                    <td
+                                        class="p-3 font-bold text-text-light dark:text-text-dark sticky left-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark group-hover:bg-primary/5 transition-colors">
+                                        l</td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">la</button>
+                                    </td>
+                                    <td class="p-2 bg-gray-50 dark:bg-gray-800/30"></td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">le</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">li</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lu</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lü</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lai</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lei</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lao</button>
+                                    </td>
+                                    <td class="p-2"><button
+                                            class="pinyin-cell w-full py-2 rounded hover:bg-primary hover:text-white hover:shadow-md transition-all text-sm font-medium text-text-light dark:text-text-dark">lou</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Sidebar (Tools & Quiz) -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Tone Guide Card -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-icons text-primary">equalizer</span>
+                        <h3 class="font-bold text-lg">Thanh Điệu (Tones)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark border-l-4 border-tone-1">
+                            <div>
+                                <span class="block font-bold text-tone-1">Thanh 1 (Flat)</span>
+                                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">Cao độ đều, kéo
+                                    dài</span>
+                            </div>
+                            <span class="text-2xl font-serif">mā</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark border-l-4 border-tone-2">
+                            <div>
+                                <span class="block font-bold text-tone-2">Thanh 2 (Rising)</span>
+                                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">Đi lên như dấu
+                                    sắc</span>
+                            </div>
+                            <span class="text-2xl font-serif">má</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark border-l-4 border-tone-3">
+                            <div>
+                                <span class="block font-bold text-tone-3">Thanh 3 (Dip)</span>
+                                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">Xuống rồi lên (dấu
+                                    hỏi)</span>
+                            </div>
+                            <span class="text-2xl font-serif">mǎ</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark border-l-4 border-tone-4">
+                            <div>
+                                <span class="block font-bold text-tone-4">Thanh 4 (Falling)</span>
+                                <span class="text-xs text-text-muted-light dark:text-text-muted-dark">Rơi mạnh, dứt
+                                    khoát</span>
+                            </div>
+                            <span class="text-2xl font-serif">mà</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pinyin Quiz Card -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <span class="material-icons text-6xl transform rotate-12">quiz</span>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-icons text-primary">headphones</span>
+                            <h3 class="font-bold text-lg">Luyện tập nhanh</h3>
+                        </div>
+                        <div class="bg-primary/5 rounded-lg p-6 mb-4 text-center border border-primary/10">
+                            <button
+                                class="w-16 h-16 rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark transition-colors flex items-center justify-center mx-auto mb-3">
+                                <span class="material-icons text-3xl">volume_up</span>
+                            </button>
+                            <p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Nghe và điền
+                                pinyin tương ứng</p>
+                        </div>
+                        <div class="space-y-3">
+                            <input
+                                class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow"
+                                placeholder="Nhập pinyin (ví dụ: hao3)" type="text" />
+                            <button
+                                class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg shadow-md transition-colors flex items-center justify-center gap-2">
+                                <span>Kiểm tra</span>
+                                <span class="material-icons text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Learning Progress Mini -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
+                    <h3 class="font-bold text-lg mb-4">Tiến độ hôm nay</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-text-muted-light dark:text-text-muted-dark">Đã học</span>
+                        <span class="text-sm font-bold text-primary">12/50 âm</span>
+                    </div>
+                    <div class="w-full bg-background-light dark:bg-background-dark rounded-full h-2.5 overflow-hidden">
+                        <div class="bg-primary h-2.5 rounded-full" style="width: 24%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark py-8 mt-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-text-muted-light dark:text-text-muted-dark text-sm">
+                © 2023 Tự Học Tiếng Trung Free. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary text-sm transition-colors"
+                    href="#">Về chúng tôi</a>
+                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary text-sm transition-colors"
+                    href="#">Điều khoản</a>
+                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary text-sm transition-colors"
+                    href="#">Liên hệ</a>
+            </div>
+            <div class="flex gap-4">
+                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors"
+                    href="#"><span class="material-icons">facebook</span></a>
+                <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors"
+                    href="#"><span class="material-icons">email</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

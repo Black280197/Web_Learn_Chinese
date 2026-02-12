@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bộ Thủ &amp; Chữ Hán Practice - Tự Học Tiếng Trung Free</title>
+    <meta content="Practice Chinese Radicals and Hanzi with stroke order animations." name="description" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e5cb0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2632",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for the Radical Grid */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e2e8f0;
+            border-radius: 20px;
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #374151;
+        }
+
+        /* Hanzi Grid Pattern */
+        .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(19, 127, 236, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(19, 127, 236, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .tian-ge-zi-bg {
+            position: relative;
+            background-color: white;
+            border: 2px solid #e5e7eb;
+        }
+
+        .dark .tian-ge-zi-bg {
+            background-color: #1a2632;
+            border-color: #374151;
+        }
+
+        /* Diagonal lines for Tian Ge Zi grid */
+        .tian-ge-zi-bg::before,
+        .tian-ge-zi-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px dashed rgba(156, 163, 175, 0.3);
+            pointer-events: none;
+        }
+
+        .tian-ge-zi-bg::before {
+            border-bottom: none;
+            border-right: none;
+            transform: scale(0.5) translate(50%, 50%);
+            /* Crosshair style instead of full diagonal for simpler CSS impl */
+        }
+
+        /* Vertical & Horizontal center lines */
+        .cross-hair-v {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            border-left: 1px dashed #cbd5e1;
+            transform: translateX(-50%);
+        }
+
+        .cross-hair-h {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            border-top: 1px dashed #cbd5e1;
+            transform: translateY(-50%);
+        }
+
+        .dark .cross-hair-v,
+        .dark .cross-hair-h {
+            border-color: #4b5563;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display min-h-screen flex flex-col antialiased selection:bg-primary/30">
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold text-xl">
+                            中</div>
+                        <span class="font-bold text-xl tracking-tight">Tự Học Tiếng Trung <span
+                                class="text-primary font-normal">Free</span></span>
+                    </div>
+                    <div class="hidden md:ml-8 md:flex md:space-x-1">
+                        <a class="border-transparent text-slate-500 dark:text-slate-400 hover:text-primary hover:border-primary inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium transition-colors"
+                            href="#">Home</a>
+                        <a class="border-transparent text-slate-500 dark:text-slate-400 hover:text-primary hover:border-primary inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium transition-colors"
+                            href="#">Pinyin</a>
+                        <a class="border-primary text-primary dark:text-primary inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium"
+                            href="#">Bộ Thủ &amp; Chữ Hán</a>
+                        <a class="border-transparent text-slate-500 dark:text-slate-400 hover:text-primary hover:border-primary inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium transition-colors"
+                            href="#">HSK Vocab</a>
+                        <a class="border-transparent text-slate-500 dark:text-slate-400 hover:text-primary hover:border-primary inline-flex items-center px-3 pt-1 border-b-2 text-sm font-medium transition-colors"
+                            href="#">Grammar</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <!-- Theme Toggle Placeholder -->
+                    <button
+                        class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400">
+                        <span class="material-icons text-xl">dark_mode</span>
+                    </button>
+                    <button
+                        class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm shadow-primary/30">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full gap-8 flex flex-col">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">214 Bộ Thủ &amp; Hanzi Library</h1>
+                <p class="text-slate-500 dark:text-slate-400 max-w-2xl">
+                    Master the building blocks of Chinese characters. Select a radical to practice its stroke order or
+                    browse the most common HSK characters below.
+                </p>
+            </div>
+            <div
+                class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 bg-white dark:bg-surface-dark px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span>System Status: Online</span>
+            </div>
+        </div>
+        <!-- Upper Section: Split View -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-auto lg:h-[600px]">
+            <!-- Left: Radical Grid (Searchable) -->
+            <div
+                class="lg:col-span-7 bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col overflow-hidden h-[600px] lg:h-full">
+                <!-- Toolbar -->
+                <div class="p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-grow">
+                            <span class="material-icons absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2 rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary text-sm shadow-sm transition-all"
+                                placeholder="Search by Pinyin, Meaning or Stroke..." type="text" />
+                        </div>
+                        <div class="flex gap-2">
+                            <select
+                                class="rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm py-2 pl-3 pr-8 focus:border-primary focus:ring-primary shadow-sm cursor-pointer">
+                                <option>All Strokes</option>
+                                <option>1-3 Strokes</option>
+                                <option>4-6 Strokes</option>
+                                <option>7+ Strokes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Quick Filters -->
+                    <div class="flex gap-2 mt-3 overflow-x-auto pb-1 no-scrollbar">
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-primary text-white shadow-sm shadow-primary/30 whitespace-nowrap">All</button>
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">Human
+                            (亻)</button>
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">Water
+                            (氵)</button>
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">Hand
+                            (扌)</button>
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">Grass
+                            (艹)</button>
+                        <button
+                            class="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors whitespace-nowrap">Heart
+                            (忄)</button>
+                    </div>
+                </div>
+                <!-- Grid Content -->
+                <div class="flex-grow overflow-y-auto p-4 custom-scrollbar bg-slate-50 dark:bg-black/20">
+                    <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-6 gap-3">
+                        <!-- Radical Item Active -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border-2 border-primary shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5">
+                            <span class="font-chinese text-3xl mb-1 text-primary">一</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">yī</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">One</span>
+                            <div class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></div>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">丨</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">gǔn</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Line</span>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">丶</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">zhǔ</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Dot</span>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">丿</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">piě</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Slash</span>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">乙</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">yǐ</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Second</span>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">亅</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">jué</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Hook</span>
+                        </button>
+                        <!-- Radical Item -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">二</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">èr</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Two</span>
+                        </button>
+                        <!-- Filling with some more items for visual representation -->
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">亠</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">tóu</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Lid</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">人</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">rén</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Man</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">儿</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">ér</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Legs</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">入</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">rù</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Enter</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">八</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">bā</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Eight</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">冂</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">jiōng</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Down Box</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">冖</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">mì</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Cover</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">冫</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">bīng</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Ice</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">几</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">jī</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Table</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">凵</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">kǎn</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Open Box</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">刀</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">dāo</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Knife</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">力</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">lì</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Power</span>
+                        </button>
+                        <button
+                            class="group relative flex flex-col items-center justify-center p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-200">
+                            <span
+                                class="font-chinese text-3xl mb-1 text-slate-800 dark:text-white group-hover:text-primary transition-colors">勹</span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">bāo</span>
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wide mt-1">Wrap</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Stroke Order Practice Card -->
+            <div class="lg:col-span-5 flex flex-col">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg h-full flex flex-col">
+                    <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Stroke Order Practice</h2>
+                            <p class="text-xs text-slate-500">Powered by Hanzi Writer</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="material-icons text-slate-300 dark:text-slate-600">settings</span>
+                            <span class="material-icons text-slate-300 dark:text-slate-600">help_outline</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex-grow flex flex-col items-center justify-center p-8 bg-slate-50/50 dark:bg-black/20">
+                        <!-- Canvas Area -->
+                        <div
+                            class="relative w-64 h-64 tian-ge-zi-bg shadow-inner rounded-md mb-6 cursor-crosshair group overflow-hidden">
+                            <div class="cross-hair-v"></div>
+                            <div class="cross-hair-h"></div>
+                            <!-- Placeholder for Stroke Animation - represented by static path for visualization -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span
+                                    class="font-chinese text-9xl text-black/10 dark:text-white/10 select-none">一</span>
+                            </div>
+                            <!-- Simulated Drawn Stroke -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 100 100">
+                                <path class="opacity-80 drop-shadow-md" d="M 20 50 Q 50 48 80 50" fill="none"
+                                    stroke="#137fec" stroke-linecap="round" stroke-width="8"></path>
+                                <!-- Hand cursor indicator -->
+                                <image class="opacity-50 animate-bounce" data-alt="Hand cursor showing interaction"
+                                    height="20" href="https://fonts.gstatic.com/s/i/materialicons/touch_app/v6/24px.svg"
+                                    width="20" x="70" y="55" />
+                            </svg>
+                        </div>
+                        <!-- Character Info Large -->
+                        <div class="text-center mb-6">
+                            <h3 class="text-3xl font-bold text-slate-800 dark:text-white mb-1">一 <span
+                                    class="text-primary font-normal text-2xl">(yī)</span></h3>
+                            <p class="text-slate-500 dark:text-slate-400">Radical #1 • 1 Stroke</p>
+                            <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm italic">"One; a, an; alone"</p>
+                        </div>
+                        <!-- Controls -->
+                        <div class="grid grid-cols-2 gap-3 w-full max-w-xs">
+                            <button
+                                class="flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-sm shadow-primary/30 transition-all active:scale-95">
+                                <span class="material-icons text-sm">play_arrow</span>
+                                Animate
+                            </button>
+                            <button
+                                class="flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 rounded-lg transition-all active:scale-95">
+                                <span class="material-icons text-sm">quiz</span>
+                                Quiz Mode
+                            </button>
+                            <button
+                                class="col-span-2 flex items-center justify-center gap-2 px-4 py-2 bg-transparent hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500 rounded-lg text-sm transition-colors">
+                                <span class="material-icons text-sm">refresh</span>
+                                Clear Canvas
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lower Section: Common Characters List -->
+        <div class="mt-4">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    300 Common Characters (HSK 1-2)
+                </h2>
+                <button class="text-primary hover:text-primary-dark text-sm font-medium flex items-center">
+                    View Full List <span class="material-icons text-sm ml-1">arrow_forward</span>
+                </button>
+            </div>
+            <div
+                class="bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                        <thead class="bg-slate-50 dark:bg-slate-800">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Rank</th>
+                                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Hanzi</th>
+                                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Pinyin</th>
+                                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Meaning</th>
+                                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Example</th>
+                                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                                    scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-surface-dark">
+                            <!-- Row 1 -->
+                            <tr
+                                class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-400 font-mono">001</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="text-2xl font-chinese text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">的</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">de</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300">
+                                    possessive particle</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-chinese">我的</span> (wǒ de) - my
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-slate-400 hover:text-primary transition-colors"><span
+                                            class="material-icons text-base">edit</span></button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr
+                                class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-400 font-mono">002</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="text-2xl font-chinese text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">一</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">yī</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300">one;
+                                    a little</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-chinese">一样</span> (yíyàng) - same
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-slate-400 hover:text-primary transition-colors"><span
+                                            class="material-icons text-base">edit</span></button>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr
+                                class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-400 font-mono">003</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="text-2xl font-chinese text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">是</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">shì</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300">to be
+                                    (am, is, are)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-chinese">是的</span> (shì de) - yes
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-slate-400 hover:text-primary transition-colors"><span
+                                            class="material-icons text-base">edit</span></button>
+                                </td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr
+                                class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-400 font-mono">004</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="text-2xl font-chinese text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">不</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">bù</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300">not;
+                                    no</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-chinese">对不起</span> (duìbuqǐ) - sorry
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-slate-400 hover:text-primary transition-colors"><span
+                                            class="material-icons text-base">edit</span></button>
+                                </td>
+                            </tr>
+                            <!-- Row 5 -->
+                            <tr
+                                class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-400 font-mono">005</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="text-2xl font-chinese text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">了</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">le</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300">
+                                    aspect particle (completed)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+                                    <span class="font-chinese">太好了</span> (tài hǎo le) - great
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-slate-400 hover:text-primary transition-colors"><span
+                                            class="material-icons text-base">edit</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination -->
+                <div
+                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 flex items-center justify-between">
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Showing <span class="font-medium">1</span> to
+                        <span class="font-medium">5</span> of <span class="font-medium">300</span> results</p>
+                    <div class="flex gap-2">
+                        <button
+                            class="px-3 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-600 text-sm disabled:opacity-50"
+                            disabled="">Previous</button>
+                        <button
+                            class="px-3 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-600 text-sm">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="mt-12 bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-slate-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            <p>© 2023 Tự Học Tiếng Trung Free. Keep practicing every day!</p>
+            <div class="mt-2 flex justify-center space-x-4">
+                <a class="hover:text-primary" href="#">Privacy</a>
+                <a class="hover:text-primary" href="#">Terms</a>
+                <a class="hover:text-primary" href="#">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

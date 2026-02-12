@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ngữ Pháp &amp; Tiến Độ Dashboard - Tự Học Tiếng Trung Free</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#106bc5",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2632",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .chinese-text {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        /* Custom Circular Progress */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            /* Approximate max height */
+            opacity: 1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-200 min-h-screen">
+    <!-- Top Navigation -->
+    <nav class="bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <span class="material-icons text-primary text-3xl">school</span>
+                        <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Tự Học Tiếng
+                            Trung</span>
+                    </div>
+                    <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+                        <a class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                            href="#">Trang Chủ</a>
+                        <a class="border-primary text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                            href="#">Học Tập</a>
+                        <a class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                            href="#">Từ Điển</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img alt="User Avatar" class="h-8 w-8 rounded-full" data-alt="User profile avatar with initials"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuARa9-KioDS_64Q7pfdfZtkajii-2PhbB_-yc344QR1AmmLykvLtIgbKvAkUlaccuJh6sj9TjutrRyAvxgiO-woUeOYUlJH6NdAgpojLbMSRaZv0_2DSA-twcrgV3ipIEeKzf15t7RmetjjVkG84l--2iSh3DFTcVfNWC90KOkkAul_tNsr3JG5qB8ucz7OmSO1mFmlR1lJkgO9eThu42nOHnAW7vrMBH_T2U0m7AfmixHED-ueM2PA-0zSdXVphT2RE0HQYs6c3JCc" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb & Header -->
+        <div class="mb-8">
+            <nav aria-label="Breadcrumb" class="flex mb-2">
+                <ol class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                    <li><a class="hover:text-primary transition-colors" href="#">Học Tập</a></li>
+                    <li><span class="material-icons text-xs">chevron_right</span></li>
+                    <li class="font-medium text-gray-900 dark:text-white">Ngữ Pháp Cơ Bản</li>
+                </ol>
+            </nav>
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Ngữ pháp &amp; Tiến độ</h1>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">Nắm vững các cấu trúc câu cơ bản và theo dõi hành trình
+                chinh phục tiếng Trung của bạn.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Column: Grammar Accordion (Layout 8/12) -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Section Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-semibold flex items-center gap-2">
+                        <span class="material-icons text-primary">menu_book</span>
+                        Bài học ngữ pháp
+                    </h2>
+                    <span class="text-sm text-gray-500 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">3 bài
+                        học</span>
+                </div>
+                <!-- Accordion Group -->
+                <div class="space-y-4">
+                    <!-- Accordion Item 1 (Active) -->
+                    <div
+                        class="accordion-item active bg-surface-light dark:bg-surface-dark border border-primary/30 rounded-xl shadow-sm overflow-hidden">
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between bg-primary/5 hover:bg-primary/10 transition-colors focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white font-bold text-sm">1</span>
+                                <div class="text-left">
+                                    <h3 class="font-semibold text-gray-900 dark:text-white">Trật tự từ SVO</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Cấu trúc câu cơ bản Subject -
+                                        Verb - Object</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-icons accordion-icon text-gray-400 transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content border-t border-gray-100 dark:border-gray-700">
+                            <div class="px-6 py-6 space-y-6">
+                                <!-- Explanation -->
+                                <div class="prose dark:prose-invert max-w-none">
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Tiếng Trung cơ bản có trật tự từ rất giống với tiếng Việt và tiếng Anh: <strong
+                                            class="text-primary">Chủ ngữ + Động từ + Tân ngữ</strong>.
+                                    </p>
+                                    <div
+                                        class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-100 dark:border-blue-800/30 my-4">
+                                        <div
+                                            class="flex justify-center items-center gap-2 sm:gap-4 text-center font-mono text-sm sm:text-base">
+                                            <div class="flex flex-col">
+                                                <span class="text-xs text-gray-400 uppercase mb-1">Subject</span>
+                                                <span class="font-bold text-gray-800 dark:text-gray-200">Wǒ</span>
+                                            </div>
+                                            <span class="text-primary text-xl">+</span>
+                                            <div class="flex flex-col">
+                                                <span class="text-xs text-gray-400 uppercase mb-1">Verb</span>
+                                                <span class="font-bold text-gray-800 dark:text-gray-200">ài</span>
+                                            </div>
+                                            <span class="text-primary text-xl">+</span>
+                                            <div class="flex flex-col">
+                                                <span class="text-xs text-gray-400 uppercase mb-1">Object</span>
+                                                <span class="font-bold text-gray-800 dark:text-gray-200">nǐ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Examples -->
+                                <div class="space-y-3">
+                                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Ví dụ</h4>
+                                    <!-- Example Card -->
+                                    <div
+                                        class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg group hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700">
+                                        <button aria-label="Play audio"
+                                            class="mt-1 flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 shadow-sm text-primary hover:text-primary-dark group-hover:scale-110 transition-transform">
+                                            <span class="material-icons">volume_up</span>
+                                        </button>
+                                        <div>
+                                            <p class="chinese-text text-2xl font-medium text-gray-900 dark:text-white">
+                                                我爱你</p>
+                                            <p class="text-primary font-medium mt-1">Wǒ ài nǐ</p>
+                                            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Tôi yêu bạn.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Example Card -->
+                                    <div
+                                        class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg group hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700">
+                                        <button aria-label="Play audio"
+                                            class="mt-1 flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 shadow-sm text-primary hover:text-primary-dark group-hover:scale-110 transition-transform">
+                                            <span class="material-icons">volume_up</span>
+                                        </button>
+                                        <div>
+                                            <p class="chinese-text text-2xl font-medium text-gray-900 dark:text-white">
+                                                他喝咖啡</p>
+                                            <p class="text-primary font-medium mt-1">Tā hē kāfēi</p>
+                                            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Anh ấy uống cà phê.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Action -->
+                                <div class="pt-2 flex justify-end">
+                                    <button
+                                        class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all font-medium text-sm">
+                                        <span class="material-icons text-base">check_circle</span>
+                                        Đánh dấu đã hiểu
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 2 -->
+                    <div
+                        class="accordion-item bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-bold text-sm">2</span>
+                                <div class="text-left">
+                                    <h3 class="font-semibold text-gray-900 dark:text-white">Lượng từ (Measure Words)
+                                    </h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Cách sử dụng "Số từ + Lượng từ +
+                                        Danh từ"</p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-icons accordion-icon text-gray-400 transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="px-6 py-6 border-t border-gray-100 dark:border-gray-700">
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">Trong tiếng Trung, bạn không thể nói
+                                    trực tiếp "một táo" mà phải dùng lượng từ ở giữa.</p>
+                                <!-- Example Card -->
+                                <div
+                                    class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg group hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700">
+                                    <button
+                                        class="mt-1 flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 shadow-sm text-primary hover:text-primary-dark group-hover:scale-110 transition-transform">
+                                        <span class="material-icons">volume_up</span>
+                                    </button>
+                                    <div>
+                                        <p class="chinese-text text-2xl font-medium text-gray-900 dark:text-white">一个苹果
+                                        </p>
+                                        <p class="text-primary font-medium mt-1">Yīgè píngguǒ</p>
+                                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Một quả táo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div
+                        class="accordion-item bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
+                        <button
+                            class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+                            <div class="flex items-center gap-4">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-bold text-sm">3</span>
+                                <div class="text-left">
+                                    <h3 class="font-semibold text-gray-900 dark:text-white">Trợ từ nghi vấn 'Ma' (吗)
+                                    </h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Biến câu kể thành câu hỏi Yes/No
+                                    </p>
+                                </div>
+                            </div>
+                            <span
+                                class="material-icons accordion-icon text-gray-400 transition-transform duration-300">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="px-6 py-6 border-t border-gray-100 dark:border-gray-700">
+                                <p class="text-gray-600 dark:text-gray-300">Thêm 吗 vào cuối câu để tạo câu hỏi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Progress Dashboard (Layout 4/12) -->
+            <div class="lg:col-span-4 space-y-6">
+                <!-- Progress Card -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 sticky top-24">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 dark:text-white">Tổng quan học tập</h2>
+                        <button class="text-xs text-primary hover:text-primary-dark font-medium hover:underline">Chi
+                            tiết</button>
+                    </div>
+                    <!-- Charts Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <!-- Chart 1: Pinyin -->
+                        <div class="flex flex-col items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50">
+                            <div class="relative w-20 h-20 mb-2">
+                                <svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+                                    <path class="text-gray-200 dark:text-gray-700"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="currentColor" stroke-width="3.8"></path>
+                                    <path class="text-primary"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="currentColor" stroke-dasharray="80, 100"
+                                        stroke-linecap="round" stroke-width="3.8"></path>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                    <span class="text-sm font-bold text-gray-900 dark:text-white">80%</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium text-gray-600 dark:text-gray-400">Pinyin</span>
+                        </div>
+                        <!-- Chart 2: Radicals -->
+                        <div class="flex flex-col items-center p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50">
+                            <div class="relative w-20 h-20 mb-2">
+                                <svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+                                    <path class="text-gray-200 dark:text-gray-700"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="currentColor" stroke-width="3.8"></path>
+                                    <path class="text-teal-500"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="currentColor" stroke-dasharray="45, 100"
+                                        stroke-linecap="round" stroke-width="3.8"></path>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                    <span class="text-sm font-bold text-gray-900 dark:text-white">45%</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium text-gray-600 dark:text-gray-400">Bộ thủ</span>
+                        </div>
+                        <!-- Chart 3: Vocab (Full width for emphasis) -->
+                        <div
+                            class="col-span-2 flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50">
+                            <div class="flex items-center gap-3">
+                                <div class="relative w-12 h-12">
+                                    <svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+                                        <path class="text-gray-200 dark:text-gray-700"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" stroke-width="4"></path>
+                                        <path class="text-orange-500"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" stroke-dasharray="20, 100"
+                                            stroke-linecap="round" stroke-width="4"></path>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <span class="text-[10px] font-bold text-gray-900 dark:text-white">20%</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-sm font-bold text-gray-900 dark:text-white">HSK 1 Từ vựng</span>
+                                    <span class="text-xs text-gray-500">30/150 từ</span>
+                                </div>
+                            </div>
+                            <button class="text-gray-400 hover:text-primary">
+                                <span class="material-icons">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Daily Quote -->
+                    <div
+                        class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-blue-50 dark:from-primary/20 dark:to-gray-800 p-6 mb-6">
+                        <!-- Decorative quote icon -->
+                        <span class="absolute top-2 right-2 text-6xl text-primary/10 font-serif leading-none">"</span>
+                        <div class="relative z-10">
+                            <h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Lời khuyên hôm nay
+                            </h3>
+                            <p class="chinese-text text-xl font-medium text-gray-800 dark:text-gray-100 mb-1">千里之行，始于足下
+                            </p>
+                            <p class="text-sm italic text-gray-600 dark:text-gray-400 mb-3">Qiānlǐ zhī xíng, shǐ yú
+                                zúxià</p>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 font-medium">"Đường đi ngàn dặm bắt đầu
+                                từ bước chân đầu tiên."</p>
+                        </div>
+                    </div>
+                    <!-- Reset Link -->
+                    <div class="text-center">
+                        <a class="text-xs text-gray-400 hover:text-red-500 transition-colors flex items-center justify-center gap-1"
+                            href="#">
+                            <span class="material-icons text-sm">restart_alt</span>
+                            Đặt lại tiến độ (Reset Progress)
+                        </a>
+                    </div>
+                </div>
+                <!-- Promo / Extra Card (Optional for spacing) -->
+                <div class="bg-gradient-to-r from-teal-500 to-primary rounded-xl p-6 text-white shadow-lg relative overflow-hidden hidden lg:block"
+                    data-alt="Abstract gradient background showing teal to blue transition">
+                    <div class="relative z-10">
+                        <h3 class="font-bold text-lg mb-2">Thử thách HSK 1</h3>
+                        <p class="text-white/90 text-sm mb-4">Hoàn thành bài kiểm tra nhanh để mở khóa cấp độ tiếp theo!
+                        </p>
+                        <button
+                            class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-gray-50 transition-colors w-full">Bắt
+                            đầu ngay</button>
+                    </div>
+                    <!-- Decorative circle -->
+                    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Simple -->
+    <footer class="mt-12 border-t border-gray-200 dark:border-gray-800 py-8 bg-surface-light dark:bg-surface-dark">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400">© 2023 Tự Học Tiếng Trung Free. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a class="text-gray-400 hover:text-gray-500" href="#">
+                    <span class="sr-only">Facebook</span>
+                    <span class="material-icons text-xl">facebook</span>
+                </a>
+                <a class="text-gray-400 hover:text-gray-500" href="#">
+                    <span class="sr-only">Email</span>
+                    <span class="material-icons text-xl">email</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Interactive Script Simulation (Note: No JS allowed in prompt, this is structure only) -->
+    <!-- The accordion items have 'active' class on the first item to show state. In a real app, clicking the button toggles this class. -->
+</body>
+
+</html>
